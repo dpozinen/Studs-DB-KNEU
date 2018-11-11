@@ -7,9 +7,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.HibernateException;
 
-public class HibernateActions
+public class HibernateActions implements IStudentDao
 {
-	private static SessionFactory factory;
+	private SessionFactory factory;
 
 	public HibernateActions() {
 		try {
@@ -20,6 +20,7 @@ public class HibernateActions
 		}
 	}
 
+	@Override
 	public void addStudent(String LastName, String FirstName, String Faculty, String Spec) {
 		Session session = factory.openSession();
 		Transaction transaction = null;
@@ -38,6 +39,7 @@ public class HibernateActions
 		}
 	}
 
+	@Override
 	public Student getStudentById(int id)
 	{
 		Student student = null;
@@ -58,6 +60,7 @@ public class HibernateActions
 		return student;
 	}
 
+	@Override
 	public void deleteStudent(int id) {
 		Session session = factory.openSession();
 		Transaction transaction = null;
@@ -84,5 +87,9 @@ public class HibernateActions
 
 	public void stop() throws Exception {
 		factory.close();
+	}
+
+	public void setFactory(SessionFactory factory) {
+		this.factory = factory;
 	}
 }
