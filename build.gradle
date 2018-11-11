@@ -1,0 +1,32 @@
+
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+
+    // Apply the application plugin to add support for building an application
+    id 'application'
+}
+
+// Define the main class for the application
+mainClassName = 'App'
+
+tasks.withType(JavaCompile) {
+  options.encoding = "UTF-8"
+}
+
+dependencies {
+    // This dependency is found on compile classpath of this component and consumers.
+    compile 'com.google.guava:guava:23.0'
+	compile 'log4j:log4j:1.2.17'
+	compile 'commons-logging:commons-logging:1.2'
+    testCompile 'junit:junit:4.12'
+	compile 'org.hibernate:hibernate-core:5.3.7.Final'
+    compile 'postgresql:postgresql:9.1-901-1.jdbc4'
+}
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
