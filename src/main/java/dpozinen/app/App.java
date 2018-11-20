@@ -1,6 +1,6 @@
-package app;
+package dpozinen.app;
 
-import dao.HibernateActions;
+import dpozinen.dao.HibernateActions;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
