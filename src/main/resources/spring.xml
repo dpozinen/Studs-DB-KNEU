@@ -21,7 +21,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>entity.Student</value>
+				<value>dpozinen.entity.Student</value>
 			</list>
 		</property>
 
@@ -34,7 +34,7 @@
 		</property>
 	</bean>
 
-	<bean id="studentDAO" class="dao.HibernateActions">
+	<bean id="studentDAO" class="dpozinen.dao.HibernateActions">
 		<property name="factory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
 </beans>

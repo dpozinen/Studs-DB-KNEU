@@ -6,11 +6,15 @@ import org.hibernate.Transaction;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 import java.util.List;
 import java.util.ArrayList;
 
 import org.hibernate.HibernateException;
 
+@EnableTransactionManagement
 public class HibernateActions implements IStudentDao
 {
 	private SessionFactory factory;
@@ -122,13 +126,18 @@ public class HibernateActions implements IStudentDao
 		}
 	}
 
+	// TODO: fix weird transcation required Exception
+	@Transactional
 	@Override
 	public void deleteAllStudents() {
 		Session session = factory.openSession();
+		Transaction transaction = null;
 
 		try {
-			Query query = session.createQuery("DELETE FROM students");
+			transaction = session.beginTransaction();
+			Query query = session.createQuery("DELETE FROM Student");
 			query.executeUpdate();
+			transaction.commit();
 		} catch (HibernateException he) {
 			he.printStackTrace();
 		} finally {

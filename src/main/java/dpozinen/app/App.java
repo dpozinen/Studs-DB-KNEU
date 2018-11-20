@@ -12,10 +12,10 @@ public class App {
 			context = new ClassPathXmlApplicationContext("spring.xml");
 
 			HibernateActions actions = context.getBean(HibernateActions.class);
-			System.out.println(actions.getStudentById(5).toString());
+			// System.out.println(actions.getStudentById(5).toString());
+			// actions.fillDefaultValues();
+			actions.deleteAllStudents();
 			context.close();
-			System.out.println("actions.getStudentById(5).toString()");
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

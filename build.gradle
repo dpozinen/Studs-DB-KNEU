@@ -12,7 +12,7 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 
-mainClassName = 'app/App'
+mainClassName = 'dpozinen/app/App'
 
 tasks.withType(JavaCompile) {
   options.encoding = "UTF-8"
@@ -36,10 +36,7 @@ dependencies {
 
 }
 
-// In this section you declare where to find the dependencies of your project
 repositories {
-    // Use jcenter for resolving your dependencies.
-    // You can declare any Maven/Ivy/file repository here.
     jcenter()
 	mavenCentral()
 }
