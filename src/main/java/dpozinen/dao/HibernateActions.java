@@ -48,7 +48,14 @@ public class HibernateActions implements IStudentDao
 	}
 
 	@Override
-	public Student getStudentById(int id)
+	public void addStudent(Student student) {
+		addStudent(student.getLastName(), student.getFirstName(), student.getFaculty(),
+					student.getSpeciality(), student.getCardID());
+	}
+
+
+	@Override
+	public Student getStudent(int id)
 	{
 		Student student = null;
 		Session session = factory.openSession();
@@ -69,7 +76,7 @@ public class HibernateActions implements IStudentDao
 	}
 
 	@Override
-	public Student getStudentByCardId(int cardID) {
+	public Student getStudent(String cardID) {
 		Session session = factory.openSession();
 		Transaction transaction = null;
 		Student student = null;

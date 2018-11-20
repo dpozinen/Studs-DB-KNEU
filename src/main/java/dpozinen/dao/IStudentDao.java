@@ -7,10 +7,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface IStudentDao {
 	void 	addStudent(String LastName, String FirstName, String Faculty, String Spec, String cardID);
+	void 	addStudent(Student student);
 	void 	deleteStudent(int id);
 	void 	deleteStudent(String cardID);
-	Student getStudentById(int id);
-	Student getStudentByCardId(int cardID);
+	Student getStudent(int id);
+	Student getStudent(String cardID);
 	@Transactional
 	public void 	deleteAllStudents();
 	boolean	studentExists(Student student);
