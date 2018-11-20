@@ -1,4 +1,4 @@
-package entity;
+package dpozinen.entity;
 
 import javax.persistence.*;
 
@@ -22,14 +22,18 @@ public class Student
 	@Column(name = "spec")
 	private String speciality;
 
+	@Column(name = "cardID")
+	private	String cardID;
+
 	public Student() {
 	}
 
-	public Student(String firstName, String lastName, String faculty, String speciality) {
+	public Student(String firstName, String lastName, String faculty, String speciality, String cardID) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.faculty = faculty;
 		this.speciality = speciality;
+		this.cardID = cardID;
 	}
 
 	public int getId() {
@@ -72,7 +76,15 @@ public class Student
 		this.speciality = speciality;
 	}
 
+	public void setCardID(String cardID) {
+		this.cardID = cardID;
+	}
+
+	public String getCardID() {
+		return this.cardID;
+	}
+
 	public String toString() {
-		return "Id: " + id + " Name: " + firstName + " Surname: " + lastName;
+		return "Id: " + id + " Name: " + firstName + " Surname: " + lastName + "CardID: " + cardID;
 	}
 }

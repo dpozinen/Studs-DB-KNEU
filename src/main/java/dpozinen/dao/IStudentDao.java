@@ -1,9 +1,15 @@
-package dao;
+package dpozinen.dao;
 
-import entity.Student;
+import dpozinen.entity.Student;
+import java.util.List;
 
 public interface IStudentDao {
-	public void addStudent(String LastName, String FirstName, String Faculty, String Spec);
-	public void deleteStudent(int id);
-	public Student getStudentById(int id);
+	void 	addStudent(String LastName, String FirstName, String Faculty, String Spec, String cardID);
+	void 	deleteStudent(int id);
+	void 	deleteStudent(String cardID);
+	Student getStudentById(int id);
+	Student getStudentByCardId(int cardID);
+	void 	deleteAllStudents();
+	boolean	studentExists(Student student);
+	// List<Student> listAllStudents();
 }

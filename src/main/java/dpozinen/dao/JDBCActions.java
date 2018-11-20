@@ -1,4 +1,4 @@
-package dao;
+package dpozinen.dao;
 
 import java.sql.*;
 
