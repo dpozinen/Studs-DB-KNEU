@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -111,7 +111,7 @@
 			</div>
 		</div>
 		<script src="<c:url value='/static/js/app.js' />"></script>
-		<script src="<c:url value='/static/js/service/student_service.js' />"></script>
-		<script src="<c:url value='/static/js/controller/student_controller.js' />"></script>
+		<script src="<c:url value='/static/js/service/StudentService.js' />"></script>
+		<script src="<c:url value='/static/js/controller/StudentController.js' />"></script>
 	</body>
 </html>
