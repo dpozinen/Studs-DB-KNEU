@@ -16,16 +16,10 @@
 			<!-- <link rel="stylesheet" href="app.css"> -->
 			<!-- <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link> -->
 		<style>
-			.firstName.ng-valid {
+			.field.ng-valid {
 				background-color: lightgreen;
 			}
-			.firstName.ng-dirty.ng-invalid {
-				background-color:lightcoral;
-			}
-			.lastName.ng-valid {
-				background-color: lightgreen;
-			}
-			.lastName.ng-dirty.ng-invalid {
+			.field.ng-dirty.ng-invalid {
 				background-color:lightcoral;
 			}
 			input[type=number]::-webkit-inner-spin-button,
@@ -45,23 +39,23 @@
 					<form ng-submit="ctrl.submit()" name="studentForm">
 						<input type="hidden" ng-model="ctrl.student.id"/>
 							<div class="input-group">
-								<input type="text" ng-model="ctrl.student.firstName" id="fname" class="firstName form-control" placeholder="Введіть Ім'я" required>
+								<input type="text" ng-model="ctrl.student.firstName" id="fname" class="field form-control" placeholder="Введіть Ім'я" required>
 							</div>
 							<br>
 							<div class="input-group">
-								<input type="text" ng-model="ctrl.student.lastName" id="lname" class="lastName form-control" placeholder="Введіть Прізвище" required>
+								<input type="text" ng-model="ctrl.student.lastName" id="lname" class="field form-control" placeholder="Введіть Прізвище" required>
 							</div>
 							<br>
 							<div class="input-group">
-								<input type="text" ng-model="ctrl.student.faculty" id="faculty" class="firstName form-control" placeholder="Введіть Факультет" required>
+								<input type="text" ng-model="ctrl.student.faculty" id="faculty" class="field form-control" placeholder="Введіть Факультет" required>
 							</div>
 							<br>
 							<div class="input-group">
-								<input type="text" ng-model="ctrl.student.spec" id="spec" class="firstName form-control" placeholder="Введіть Спеціальнісь" required>
+								<input type="text" ng-model="ctrl.student.spec" id="spec" class="field form-control" placeholder="Введіть Спеціальнісь" required>
 							</div>
 							<br>
 							<div class="input-group">
-								<input type="number" ng-model="ctrl.student.studID" id="studID" class="firstName form-control" placeholder="Введіть Номер Залікової Книги" required>
+								<input type="number" ng-model="ctrl.student.studID" id="studID" class="field form-control" placeholder="Введіть Номер Залікової Книги" required>
 							</div>
 							<br>
 							<div class="float-left">

@@ -13,7 +13,7 @@ public interface IStudentDao {
 	Student getStudent(int id);
 	Student getStudent(String cardID);
 	@Transactional
-	public void 	deleteAllStudents();
+	void 	deleteAllStudents();
 	boolean	studentExists(Student student);
 	// List<Student> listAllStudents();
 }
