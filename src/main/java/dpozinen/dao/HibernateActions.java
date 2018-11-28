@@ -10,8 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+import javax.persistence.criteria.CriteriaQuery;
+
 import java.util.ArrayList;
 
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 
 
@@ -167,6 +171,23 @@ public class HibernateActions implements IStudentDao
 		} finally {
 			session.close();
 		}
+	}
+
+	@Override
+	public List<Student> getAllStudents() {
+		Session session = factory.openSession();
+		List<Student> studentList = null;
+
+		try {
+			CriteriaQuery<Student> cq = session.getCriteriaBuilder().createQuery(Student.class);
+			cq.from(Student.class);
+			studentList = session.createQuery(cq).list();
+		} catch (HibernateException he) {
+			he.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return studentList;
 	}
 
 	public void fillDefaultValues() throws HibernateException {

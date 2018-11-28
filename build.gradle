@@ -13,7 +13,7 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 
-mainClassName = 'dpozinen/'
+mainClassName = 'dpozinen/app/App'
 
 tasks.withType(JavaCompile) {
   options.encoding = "UTF-8"

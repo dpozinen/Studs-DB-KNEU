@@ -15,5 +15,5 @@ public interface IStudentDao {
 	@Transactional
 	void 	deleteAllStudents();
 	boolean	studentExists(Student student);
-	// List<Student> listAllStudents();
+	List<Student> getAllStudents();
 }

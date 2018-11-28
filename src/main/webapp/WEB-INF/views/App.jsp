@@ -16,12 +16,6 @@
 			<!-- <link rel="stylesheet" href="app.css"> -->
 			<!-- <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link> -->
 		<style>
-			.field.ng-valid {
-				background-color: lightgreen;
-			}
-			.field.ng-dirty.ng-invalid {
-				background-color:lightcoral;
-			}
 			input[type=number]::-webkit-inner-spin-button,
 			input[type=number]::-webkit-outer-spin-button {
 				-webkit-appearance: none;
@@ -32,7 +26,7 @@
 	</head>
 	<body ng-app="App">
 		<br>
-		<div class="container" ng-controller="AppController as ctrl">
+		<div class="container" ng-controller="StudentController as ctrl">
 			<div class="card">
 				<div class="card-header text-center"><h1>Студенти</h1></span> </div>
 				<div class="card-body">
@@ -51,15 +45,15 @@
 							</div>
 							<br>
 							<div class="input-group">
-								<input type="text" ng-model="ctrl.student.spec" id="spec" class="field form-control" placeholder="Введіть Спеціальнісь" required>
+								<input type="text" ng-model="ctrl.student.speciality" id="speciality" class="field form-control" placeholder="Введіть Спеціальнісь" required>
 							</div>
 							<br>
 							<div class="input-group">
-								<input type="number" ng-model="ctrl.student.studID" id="studID" class="field form-control" placeholder="Введіть Номер Залікової Книги" required>
+								<input type="number" ng-model="ctrl.student.cardID" id="cardID" class="field form-control" placeholder="Введіть Номер Залікової Книги" required>
 							</div>
 							<br>
 							<div class="float-left">
-								<button type="button" class="btn btn-danger" ng-click="ctr.reset()" ng-disabled="studentForm.$pristine">Стерти</button>
+								<button type="button" class="btn btn-danger" ng-click="ctrl.reset()" ng-disabled="studentForm.$pristine">Стерти</button>
 							</div>
 							<div class="float-right">
 								<input type="submit" value="Зберегти" class="btn btn-primary" ng-disabled="studentForm.$invalid">
@@ -90,10 +84,10 @@
 								<td><span ng-bind="student.firstName"></span></td>
 								<td><span ng-bind="student.lastName"></span></td>
 								<td><span ng-bind="student.faculty"></span></td>
-								<td><span ng-bind="student.spec"></span></td>
-								<td><span ng-bind="student.studID"></span></td>
+								<td><span ng-bind="student.speciality"></span></td>
+								<td><span ng-bind="student.cardID"></span></td>
 								<td>
-									<button type="button" class="btn btn-danger btn-sm" ng-click="ctrl.remove(student.studID)">Видалити</button>
+									<button type="button" class="btn btn-danger btn-sm" ng-click="ctrl.remove(student.id)">Видалити</button>
 								</td>
 							</tr>
 						</tbody>

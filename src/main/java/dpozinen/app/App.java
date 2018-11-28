@@ -13,8 +13,8 @@ public class App {
 
 			HibernateActions actions = context.getBean(HibernateActions.class);
 			// System.out.println(actions.getStudentById(5).toString());
-			// actions.fillDefaultValues();
-			actions.deleteAllStudents();
+			actions.fillDefaultValues();
+			// actions.deleteAllStudents();
 			context.close();
 		} catch (Exception e) {
 			e.printStackTrace();

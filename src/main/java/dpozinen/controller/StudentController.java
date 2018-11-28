@@ -21,7 +21,17 @@ import dpozinen.dao.HibernateActions;
 @RestController
 public class StudentController {
 
+	@Autowired
 	HibernateActions actions;
+
+	@RequestMapping(value = "/student/", method = RequestMethod.GET)
+	public ResponseEntity<List<Student>> getAllStudents() {
+		List<Student> students = actions.getAllStudents();
+
+		if (students == null)
+			return new ResponseEntity<List<Student>>(HttpStatus.NOT_FOUND);
+		return new ResponseEntity<List<Student>>(students, HttpStatus.OK);
+	}
 
 	@RequestMapping(value = "/student/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Student> getStudent(@PathVariable("id") int id) {
