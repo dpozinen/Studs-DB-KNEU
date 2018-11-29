@@ -4,23 +4,23 @@
    <session-factory>
 
       <property name = "hibernate.dialect">
-        org.hibernate.dialect.PostgreSQLDialect
+        org.hibernate.dialect.SQLServerDialect
       </property>
 
       <property name = "hibernate.connection.driver_class">
-        org.postgresql.Driver
+        com.microsoft.sqlserver.jdbc.SQLServerDriver
       </property>
 
       <property name = "hibernate.connection.url">
-        jdbc:postgresql://localhost:5432/postgres
-      </property>
+	  jdbc:sqlserver://studentsproject.database.windows.net:1433;database=students;user=dpozinen@studentsproject;password={};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+	  </property>
 
       <property name = "hibernate.connection.username">
-        postgres
+        dpozinen@studentsproject
       </property>
 
       <property name = "hibernate.connection.password">
-        postgres
+
       </property>
    </session-factory>
 </hibernate-configuration>

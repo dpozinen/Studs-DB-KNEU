@@ -139,7 +139,7 @@ public class HibernateActions implements IStudentDao
 		}
 	}
 
-	// TODO: fix weird transcation required Exception
+	// TODO: fix weird transaction required Exception
 	// @Transactional
 	@Override
 	public void deleteAllStudents() {
