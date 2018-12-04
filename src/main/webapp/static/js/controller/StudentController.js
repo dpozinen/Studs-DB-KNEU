@@ -3,11 +3,14 @@
 angular.module('App').controller('StudentController', ['StudentService', '$scope', function(StudentService, $scope) {
 	var self = this;
 	self.students = [];
-	self.student = {id:null, firstName:'', lastName:'', faculty:'', speciality:'', cardID:''};
+	self.student = {id:null, firstName:'', lastName:'', faculty:'', avgGrade:'', cardID:''};
 
 	self.reset = reset;
 	self.remove = remove;
 	self.submit = submit;
+
+	$scope.sortType = 'avgGrade';
+	$scope.sortReverse = false;
 
 	getAllStudents();
 
@@ -41,7 +44,7 @@ angular.module('App').controller('StudentController', ['StudentService', '$scope
 	}
 
 	function reset() {
-		self.student = {id:null, firstName:'', lastName:'', faculty:'', speciality:'', cardID:''};
+		self.student = {id:null, firstName:'', lastName:'', faculty:'', avgGrade:'', cardID:''};
 		$scope.studentForm.$setPristine();
 	}
 

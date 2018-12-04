@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('App').factory('StudentService', ['$http', '$q', function($http, $q) {
-	var URL = 'https://dpozinen.azurewebsites.net/';
+	var URL = 'https://dpozinenapp.azurewebsites.net/Studs/student/';
 
 	var factory = {
 		getAllStudents:getAllStudents,

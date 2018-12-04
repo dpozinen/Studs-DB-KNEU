@@ -12,9 +12,7 @@
 			}
 		</style>
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-			<!-- <link rel="stylesheet" href="app.css"> -->
-			<!-- <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link> -->
+			<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
 		<style>
 			input[type=number]::-webkit-inner-spin-button,
 			input[type=number]::-webkit-outer-spin-button {
@@ -45,7 +43,7 @@
 							</div>
 							<br>
 							<div class="input-group">
-								<input type="text" ng-model="ctrl.student.speciality" id="speciality" class="field form-control" placeholder="Введіть Спеціальнісь" required>
+								<input type="text" ng-model="ctrl.student.avgGrade" id="avgGrade" class="field form-control" placeholder="Введіть Середній Бал" required>
 							</div>
 							<br>
 							<div class="input-group">
@@ -73,18 +71,18 @@
 								<th>Ім'я</th>
 								<th>Прізвище</th>
 								<th>Факультет</th>
-								<th>Спеціальнісь</th>
+								<th><a href="#" ng-click="sortReverse = !sortReverse">Середній Бал</a></th>
 								<th>Номер Залікової Книги</th>
 								<th width="100">
 							</tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="student in ctrl.students">
+							<tr ng-repeat="student in ctrl.students | orderBy:sortType:sortReverse">
 								<td><span ng-bind="student.id"></span></td>
 								<td><span ng-bind="student.firstName"></span></td>
 								<td><span ng-bind="student.lastName"></span></td>
 								<td><span ng-bind="student.faculty"></span></td>
-								<td><span ng-bind="student.speciality"></span></td>
+								<td><span ng-bind="student.avgGrade"></span></td>
 								<td><span ng-bind="student.cardID"></span></td>
 								<td>
 									<button type="button" class="btn btn-danger btn-sm" ng-click="ctrl.remove(student.id)">Видалити</button>
