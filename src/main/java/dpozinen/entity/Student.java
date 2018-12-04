@@ -19,21 +19,21 @@ public class Student
 	@Column(name = "faculty")
 	private String faculty;
 
-	@Column(name = "spec")
-	private String speciality;
-
 	@Column(name = "cardID")
 	private	String cardID;
+
+	@Column(name = "avgGrade")
+	private float avgGrade;
 
 	public Student() {
 	}
 
-	public Student(String firstName, String lastName, String faculty, String speciality, String cardID) {
+	public Student(String firstName, String lastName, String faculty, String cardID, float avgGrade) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.faculty = faculty;
-		this.speciality = speciality;
 		this.cardID = cardID;
+		this.avgGrade = avgGrade;
 	}
 
 	public int getId() {
@@ -68,20 +68,20 @@ public class Student
 		this.faculty = faculty;
 	}
 
-	public String getSpeciality() {
-		return this.speciality;
-	}
-
-	public void setSpeciality(String speciality) {
-		this.speciality = speciality;
-	}
-
 	public void setCardID(String cardID) {
 		this.cardID = cardID;
 	}
 
 	public String getCardID() {
 		return this.cardID;
+	}
+
+	public void setavgGrade(float avgGrade) {
+		this.avgGrade = avgGrade;
+	}
+
+	public float getavgGrade() {
+		return this.avgGrade;
 	}
 
 	public String toString() {

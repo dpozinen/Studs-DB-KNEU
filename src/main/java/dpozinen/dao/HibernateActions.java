@@ -12,10 +12,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 import javax.persistence.criteria.CriteriaQuery;
-
-import java.util.ArrayList;
-
-import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 
 
@@ -35,12 +31,12 @@ public class HibernateActions implements IStudentDao
 	}
 
 	@Override
-	public void addStudent(String lastName, String firstName, String faculty, String spec, String cardID) {
+	public void addStudent(String lastName, String firstName, String faculty, float avgGrade, String cardID) {
 		Session session = factory.openSession();
 		Transaction transaction = null;
 
 		try {
-			Student student = new Student(firstName, lastName, faculty, spec, cardID);
+			Student student = new Student(firstName, lastName, faculty, cardID, avgGrade);
 			transaction = session.beginTransaction();
 			session.save(student);
 			transaction.commit();
@@ -56,7 +52,7 @@ public class HibernateActions implements IStudentDao
 	@Override
 	public void addStudent(Student student) {
 		addStudent(student.getLastName(), student.getFirstName(), student.getFaculty(),
-					student.getSpeciality(), student.getCardID());
+					student.getavgGrade(), student.getCardID());
 	}
 
 
@@ -140,7 +136,6 @@ public class HibernateActions implements IStudentDao
 	}
 
 	// TODO: fix weird transaction required Exception
-	// @Transactional
 	@Override
 	public void deleteAllStudents() {
 		Session session = factory.openSession();
@@ -191,9 +186,9 @@ public class HibernateActions implements IStudentDao
 	}
 
 	public void fillDefaultValues() throws HibernateException {
-		addStudent("First", "Second", "RY", "WHJE", "798400");
-		addStudent("Second", "Third", "RY", "WHJE", "079780");
-		addStudent("Third", "Fourth", "RY", "WHJE", "008400");
+		addStudent("First", "Second", "RY", 11.1f, "798400");
+		addStudent("Second", "Third", "RY", 11.2f, "079780");
+		addStudent("Third", "Fourth", "RY", 11.4f, "008400");
 	}
 
 	public void stop() throws Exception {
