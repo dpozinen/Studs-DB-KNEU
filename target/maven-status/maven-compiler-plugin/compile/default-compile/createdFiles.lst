@@ -1,0 +1,5 @@
+dpozinen\service\StudentServiceImpl.class
+dpozinen\model\Student.class
+dpozinen\repository\StudentRepo.class
+dpozinen\service\StudentService.class
+dpozinen\Application.class
