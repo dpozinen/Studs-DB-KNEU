@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+
+body {
+	background-position: center;
+	font-family: 'ABeeZee';
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+h1 {
+	font-size: 150px; color:whitesmoke; text-align: center;
+	margin: 200px;
+}
+
+.button-container {
+	position: relative;
+	margin: 100px 0 500px 0;
+	text-align: center;
+}
+
+
+input[type=button] {
+	border: 5px solid;
+	color: whitesmoke;
+	font-family: 'ABeeZee';
+	font-size: 32px;
+	border-color: whitesmoke;
+	// background-color: rgb(102, 150, 220);
+	background-color: transparent;
+	padding: 10px;
+	height: 70px;
+	width: 186px;
+	border-radius: 10px;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+input[type=button]:hover {
+	background-color: rgba(255, 255, 255, 0.123);
+}
+
+.login-form-container {
+	padding: 26px;
+	border: 5px solid whitesmoke;
+	position: relative;
+	margin: auto;
+	margin-bottom: 20%;
+	width: 30%;
+	height: 70%;
+	text-align: center;
+	background-color: transparent;
+	border-radius: 30px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+input[type=text],
+input[type=password] {
+    color: rgb(197, 211, 209);
+	padding: 10px;
+	font-size: 35px;
+    margin: 10px;
+    width: 290px;
+	height: 35px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid whitesmoke;
+}
