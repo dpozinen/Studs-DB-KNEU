@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+	<title>
+		Students Table
+	</title>
+	<head>
+		<link rel="stylesheet" href="../../static/css/styleTable.css">
+	</head>
+	<body>
+
+		<div class="login-form-container">
+			<form ng-submit="ctrl.submit()" name="studentForm">
+				<input type="hidden" ng-model="ctrl.student.id"/>
+					<div class="input-group">
+						<input type="text" ng-model="ctrl.student.firstName" id="fname" class="field form-control" placeholder="First Name" required>
+					</div>
+					<br>
+					<div class="input-group">
+						<input type="text" ng-model="ctrl.student.lastName" id="lname" class="field form-control" placeholder="Last Name" required>
+					</div>
+					<br>
+					<div class="input-group">
+						<input type="text" ng-model="ctrl.student.faculty" id="faculty" class="field form-control" placeholder="Faculty" required>
+					</div>
+					<br>
+					<div class="input-group">
+						<input type="text" ng-model="ctrl.student.avgGrade" id="avgGrade" class="field form-control" placeholder="Average Grade" required>
+					</div>
+					<br>
+					<div class="input-group">
+						<input type="number" ng-model="ctrl.student.cardID" id="cardID" class="field form-control" placeholder="Crad ID" required>
+					</div>
+					<br>
+					<!-- <div class="button-container" style="float:center; margin: 20px">
+						<input type="button" class="btn btn-danger" ng-click="ctrl.reset()" ng-disabled="studentForm.$pristine" value="Clear">
+					</div> -->
+					<div class="button-container" style="float:center; margin: 20px">
+						<input type="button" value="Save" class="btn btn-primary" ng-disabled="studentForm.$invalid">
+					</div>
+					<!-- <br> -->
+				</form>
+		</div>
+
+		<div class="container">
+			<div class="container-table">
+			<div class="wrap-table">
+				<table>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Surname</th>
+							<th>Faculty</th>
+							<th><a href="#" ng-click="sortReverse = !sortReverse">Avg Grade</a></th>
+							<th>Card ID</th>
+						</tr>	
+					</thead>
+					<tbody>
+						<tr>
+							<td>ID</td>
+							<td>Name</td>
+							<td>Surname</td>
+							<td>Faculty</td>
+							<td>Avg Grade</td>
+							<td>Card ID</td>
+						</tr>
+						<tr>
+							<td>ID</td>
+							<td>Name</td>
+							<td>Surname</td>
+							<td>Faculty</td>
+							<td>Avg Grade</td>
+							<td>Card ID</td>
+						</tr>
+						<tr>
+								<td>ID</td>
+								<td>Name</td>
+								<td>Surname</td>
+								<td>Faculty</td>
+								<td>Avg Grade</td>
+								<td>Card ID</td>
+							</tr>
+							<tr>
+								<td>ID</td>
+								<td>Name</td>
+								<td>Surname</td>
+								<td>Faculty</td>
+								<td>Avg Grade</td>
+								<td>Card ID</td>
+							</tr>
+					</tbody>
+				</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
